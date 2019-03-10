@@ -2,6 +2,7 @@ package global_methods;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
+import java.sql.Struct;
 import java.util.Map.Entry;
 import java.util.Properties;
 
@@ -37,6 +38,11 @@ public final class Configuration {
         for (Entry<Object, Object> entry: properties.entrySet()){
             System.out.println(String.format("%s=%s", entry.getKey(), entry.getValue()));
         }
+    }
+
+    public static long timeout(){
+        String value = get("timeout").trim();
+        return Long.parseLong(value);
     }
 
 }

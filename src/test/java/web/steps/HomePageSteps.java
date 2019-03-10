@@ -1,6 +1,8 @@
 package web.steps;
 
 import cucumber.api.java8.En;
+import global_methods.Configuration;
+import global_methods.Driver;
 import global_methods.ECMethods;
 import global_methods.WebDriverMethods;
 import global_utils.BaseStepDefinition;
@@ -15,6 +17,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.File;
+import java.io.IOException;
 
 
 public class HomePageSteps {    //extends BaseStepDefinition implements En {
@@ -31,11 +34,16 @@ public class HomePageSteps {    //extends BaseStepDefinition implements En {
 
 
     @Before
-    public void setUp(){
-        String baseUrl ="https://en.wiktionary.org/";
+    public void setUp() throws Exception {
+        Configuration.load();
+        Configuration.print();
+        String baseUrl = Configuration.get("url");
         System.setProperty("webdriver.chrome.driver", new File("src/drivers/chromedriver").getAbsolutePath());
+
         DesiredCapabilities cap = new DesiredCapabilities();
-        driver = new ChromeDriver(cap);
+        Driver.add(Configuration.get("browser"),cap);
+
+        driver = Driver.current();
         driver.get(baseUrl);
     }
 
@@ -53,6 +61,7 @@ public class HomePageSteps {    //extends BaseStepDefinition implements En {
         //WebDriverMethods.enterText(driver, WebDriverWait wait, WIKI_SEARCH_INPUT, "teste");
 
         HomePage.goToWikiPage(driver, driverWait);
+        HomePage.searchText(driver, driverWait, "apple");
     }
 
 

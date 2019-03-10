@@ -96,7 +96,6 @@ public class WebDriverMethods {
 
     /**
      * Insert text to WebElement locatored by passed "By" Locator
-     *
      * @param driver  - WebDriver object
      * @param wait    - WebDriverWait object
      * @param locator - Webelement selector
@@ -106,6 +105,7 @@ public class WebDriverMethods {
         ECMethods.waitForElementToBeClickable(wait, locator);
         driver.findElement(locator).sendKeys(text);
     }
+
 
     /**
      * Clear text in webelement located by "By" selector and insert new text to it.
