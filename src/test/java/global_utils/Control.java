@@ -5,27 +5,31 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import page_objects.Page;
 
 public class Control {
     public static final long TIMEOUT = Configuration.timeout();
-    WebDriver driver;
-    By locator;
+    private Page parent;
+    private By locator;
 
-    public Control(WebDriver driver, By locator) {
+    public Control(Page parentValue, By locatorValue) {
         super();
-        this.driver = driver;
-        this.locator = locator;
+        this.parent = parentValue;
+        this.locator = locatorValue;
+    }
+
+    public WebDriver getDriver(){
+        return parent.getDriver();
     }
 
     public WebElement getElement() {
-        return driver.findElement(locator);
+        return getDriver().findElement(locator);
     }
 
     public boolean exists(long timeout) {
-        WebDriverWait wait = new WebDriverWait(driver, timeout);
+        WebDriverWait wait = new WebDriverWait(getDriver(), timeout);
         try {
             wait.until(ExpectedConditions.presenceOfElementLocated(locator));
         } catch (TimeoutException e) {
@@ -38,9 +42,13 @@ public class Control {
         return exists(TIMEOUT);
     }
 
-}
+    public void click() {
+        exists();
+        this.getElement().click();
+    }
 
-
-
+//    public static void getUrl(WebDriver driver, String url) {
+//        driver.get(url);
+//    }
 
 }
