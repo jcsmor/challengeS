@@ -18,32 +18,20 @@ public abstract class BaseStepDefinition {
     private WebDriver driver;
     private WebDriverWait driverWait;
 
+
     /**
-     *
      * @return The driver instance for the current thread.
      */
-    protected WebDriver getDriver() {
-        if(driver == null) {
-            driver = ScenarioFieldManager.getFieldHolder(Thread.currentThread().getId()).getDriver();
-            // Workaround for chrome opening at different viewports on different laptops
-            if (TestConfiguration.PLATFORM == Platform.WEB_LOCAL) {
-                driver.manage().window().setSize(new Dimension(1420, 1200));
-            }
-        }
-
+    public WebDriver getDriver() {
+        driver.manage().window().setSize(new Dimension(1420, 1200));
         return driver;
     }
 
     /**
-     *
      * @return The driver wait instance for the current thread.
      */
 
-    protected WebDriverWait getDriverWait() {
-        if(driverWait == null){
-            driverWait = ScenarioFieldManager.getFieldHolder(Thread.currentThread().getId()).getDriverWait();
-        }
-
+    public WebDriverWait getDriverWait() {
         return driverWait;
     }
 }
