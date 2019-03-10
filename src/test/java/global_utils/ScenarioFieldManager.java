@@ -5,7 +5,6 @@ import global_objects.ScenarioFieldHolder;
 import java.util.HashMap;
 
 /**
- * Created by Joao Moreira on 10/03/2019.
  * Manages the components required for each Scenario. The components are made available at every step of each scenario
  * by saving and accessing them using thread identifiers (threadID).
  * Because only one scenario is run per thread at any one time and a threadID is exclusive to each thread: We can save a
