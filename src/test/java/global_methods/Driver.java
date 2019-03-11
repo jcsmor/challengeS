@@ -7,16 +7,17 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.opera.OperaDriver;
 import org.openqa.selenium.safari.SafariDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.lang.reflect.InvocationTargetException;
 import java.util.HashMap;
 import java.util.Map;
 
 public class Driver {
 
-    private Driver(){}
+    public Driver(){}
 
     private static WebDriver driver;
+
     private static final Map<String, Class<?>> driverMap = new HashMap<String, Class<?>>(){
         {
             put("chrome", ChromeDriver.class);
@@ -32,7 +33,7 @@ public class Driver {
         driver = (WebDriver) driverClass.getConstructor(Capabilities.class).newInstance(capabilities);
     }
 
-    public static WebDriver current(){
+    public static WebDriver getDriver(){
         return driver;
     }
 

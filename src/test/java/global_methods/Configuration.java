@@ -2,7 +2,6 @@ package global_methods;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
-import java.sql.Struct;
 import java.util.Map.Entry;
 import java.util.Properties;
 
