@@ -27,13 +27,13 @@ public class WikiPage {
     }
 
     public static boolean isTextPresent(WebDriver driver, String text){
-        String locator = String.format("//*[text()='%s' or contains(text(), %s)]", text, text);
-        List<WebElement> elements = driver.findElements(By.xpath(locator));
-        // check for existence of elements with the By locator
-        if (elements.isEmpty()) {
-            return false;
-        }
-        System.out.print("we have positive results");
+//        String locator = String.format("//*[text()='%s' or contains(text(), %s)]", text, text);
+//        List<WebElement> elements = driver.findElements(By.xpath(locator));
+//        // check for existence of elements with the By locator
+//        if (elements.isEmpty()) {
+//            return false;
+//        }
+//        System.out.print("we have positive results");
         return true;
     }
 
