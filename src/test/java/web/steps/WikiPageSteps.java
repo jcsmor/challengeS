@@ -28,6 +28,12 @@ public class WikiPageSteps extends Driver implements En {
             AssertionMethods.assertTrue(isDefPresent);
         });
 
+        Then("^(?:confirm that the same (.*) does not appear repeated$)", (String definition) -> {
+            boolean isRepeated;
+            isRepeated = WikiPage.isTextUnique(getDriver(),definition);
+            AssertionMethods.assertTrue(isRepeated);
+        });
+
     }
 
 

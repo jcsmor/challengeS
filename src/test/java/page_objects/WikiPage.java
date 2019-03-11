@@ -35,6 +35,20 @@ public class WikiPage {
         }
         return false;
     }
+
+    public static boolean isTextUnique(WebDriver driver, String text){
+        // return false if same test appears more
+        List<WebElement> listOfItems = ECMethods.waitForVisibilityOfAllElements(driver, WIKI_SEARCH_RESULTS);
+        int i = 0;
+        for (WebElement element : listOfItems) {
+            String elementText = element.getText();
+            if (elementText.toLowerCase().contains(text.toLowerCase())) {
+                i++;
+            }
+        }
+        return i <= 1;
+    }
+
 }
 
 

@@ -5,7 +5,7 @@ Feature: wiki fruit definition
     Given the user navigates to the wikipage
     When the user look up the definition of the word <word>
     Then the user Check that one definition is: <definition>
-#    And confirm that the same <definition> only appears once
+    And confirm that the same <definition> does not appear repeated
 
     Examples:
       | word     | definition                                                                                      |
