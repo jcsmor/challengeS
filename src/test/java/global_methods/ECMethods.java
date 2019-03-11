@@ -5,6 +5,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -26,6 +28,11 @@ public class ECMethods {
         WebDriverWait wait = new WebDriverWait(webDriver, ELEMENT_WAIT_TIME);
         return wait.until(ExpectedConditions.elementToBeClickable(((By)desiredElement)));
         }
+
+    public static List<WebElement> waitForVisibilityOfAllElements(WebDriver webDriver, By locator) {
+        WebDriverWait wait = new WebDriverWait(webDriver, ELEMENT_WAIT_TIME);
+        return wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(locator));
+    }
 
 }
 
