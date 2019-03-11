@@ -1,7 +1,6 @@
 package page_objects;
 import global_methods.*;
 import org.openqa.selenium.*;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.List;
 
@@ -11,7 +10,6 @@ import java.util.List;
 public class WikiPage {
 
     // Selector constants
-    //private static final String WIKI_URL = TestConfiguration.WIKI_URL;
     private static final By WIKI_SEARCH_INPUT = By.cssSelector("input[class *='mw-ui-input']");
     private static final By WIKI_LOOKUP_BTN = By.cssSelector("input[class ='mw-ui-button']");
 
@@ -35,9 +33,5 @@ public class WikiPage {
         }
         System.out.print("we have positive results");
         return true;
-    }
-
-
-    private static class WebElements {
     }
 }

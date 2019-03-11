@@ -41,7 +41,7 @@ configurations {
     }
 }
 
-task cucumber() {
+task selenium() {
     dependsOn assemble, compileTestJava
     doLast {
         javaexec {
