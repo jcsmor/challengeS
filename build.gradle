@@ -48,7 +48,8 @@ task cucumber() {
             main = "cucumber.api.cli.Main"
             classpath = configurations.cucumberRuntime + sourceSets.main.output + sourceSets.test.output
             args = ['--plugin', 'pretty',
-                    '--glue', 'web.web_steps', 'java/features/wiki.feature']
+                    '--glue', 'web.steps', 'src/test/java/features/',
+                    '--tags', '@Run']
         }
     }
 }

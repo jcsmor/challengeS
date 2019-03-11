@@ -1,5 +1,5 @@
 Feature: wiki fruit definition
-  @RunWith
+  @Run
   Scenario: I want to look up the definition of words
     When the user navigates to the wikipage
     Then the user look up the definition of the word apple
