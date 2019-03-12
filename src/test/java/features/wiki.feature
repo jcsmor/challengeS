@@ -1,5 +1,5 @@
 Feature: wiki fruit definition
-  @Run
+  @Selenium
   Scenario Outline: I want to look up the definition of words
 
     Given the user navigates to the wikipage

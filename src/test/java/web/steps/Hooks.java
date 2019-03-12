@@ -17,7 +17,7 @@ public class Hooks {
      * Always executed Before each Scenario
      * Generates the WebDriver
      */
-    @Before
+    @Before("@Selenium")
     public void beforeScenario(Scenario scenario) throws Exception {
         Configuration.load();
         Configuration.print();
@@ -26,7 +26,7 @@ public class Hooks {
         Driver.add(Configuration.get("browser"),cap);
     }
 
-    @After
+    @After("@Selenium")
     public void afterScenario(Scenario scenario){
         Driver.getDriver().quit();
     }

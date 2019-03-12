@@ -33,6 +33,15 @@ dependencies {
     // Manage webdriver executables
     testCompile'io.github.bonigarcia:webdrivermanager:2.2.1'
 
+    // API
+    testCompile "io.rest-assured:rest-assured:3.0.0"
+    compile "io.rest-assured:json-path:3.0.0"
+    compile "io.rest-assured:xml-path:3.0.0"
+    testCompile "junit:junit-dep:4.11"
+    testCompile "info.cukes:cucumber-picocontainer:1.2.5"
+    compile "io.rest-assured:json-schema-validator:3.3.0"
+    testCompile group: 'com.jayway.restassured', name: 'rest-assured', version: '2.9.0'
+
 }
 
 configurations {
@@ -49,6 +58,18 @@ task selenium() {
             classpath = configurations.cucumberRuntime + sourceSets.main.output + sourceSets.test.output
             args = ['--plugin', 'pretty',
                     '--glue', 'web.steps', 'src/test/java/features/wiki.feature']
+        }
+    }
+}
+
+task apiTEst() {
+    dependsOn assemble, compileTestJava
+    doLast {
+        javaexec {
+            main = "cucumber.api.cli.Main"
+            classpath = configurations.cucumberRuntime + sourceSets.main.output + sourceSets.test.output
+            args = ['--plugin', 'pretty',
+                    '--glue', 'web.steps', 'src/test/java/features/weatherApi.feature']
         }
     }
 }

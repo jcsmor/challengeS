@@ -23,3 +23,7 @@ This runs Cucumber features using Cucumber's JUnit runner.
 Using Gradle to run the Selenium feature file: After cloning the project and install gradle dependencies, go to project source and run:
 
 gradle selenium
+
+Using Gradle to run the Api feature file: After cloning the project and install gradle dependencies, go to project source and run:
+
+gradle apiTests
