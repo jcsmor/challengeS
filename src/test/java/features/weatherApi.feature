@@ -4,7 +4,9 @@ Feature: Get Current weather data
     When Call current weather data for one location by city name <name>
     Then the status response code is 200
     And the response content type is JSON
-    And the body name equals searched city name <name>
+    And the response name equals searched city name <name>
+    And the response has a valid temperature
+    And the response min temperature is below or equal max temperature
 
     Examples:
       | name       |
@@ -17,6 +19,8 @@ Feature: Get Current weather data
     Then the status response code is 200
     And the response content type is JSON
     And the body id equals searched city id <id>
+    And the response has a valid temperature
+    And the response min temperature is below or equal max temperature
 
     Examples:
       | id          |
