@@ -43,7 +43,7 @@ Api tests use cucumber and Java with rest assured libraries and Hamcrest Matcher
 
 ## Authors
 
-* **Joao Moreira** - (https://github.com/jcsmor)
+* **Joao Moreira** - (https://github.com/jcsmor) 
 
 ## License
 
