@@ -5,13 +5,10 @@ import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import global_methods.Configuration;
 import global_methods.Driver;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import java.io.File;
 
 public class Hooks {
-    private WebDriver driver;
-
     /**
      * Before Hook
      * Always executed Before each Scenario
