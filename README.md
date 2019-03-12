@@ -1,29 +1,52 @@
-Technologies used in this project:
+# ChallengeS
 
-IDE - Intellij
-Build and Dependency Management - grade
-Core Driver - Selenium
-Core Runner - Junit
-Keyword-Driven Engine - cucumber
+This project presents a series of Api tests and Selenium using:
 
-There is a single feature file for Web Selenium, and we have a second feature file for API testing
+## Getting Started
 
-Get the code
-Git:
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
-git clone https://github.com/jcsmor/challengeS.git
-cd challengeS
+### Prerequisites
 
-Use Gradle
-Open a command window and run:
+```
+Get the code Git:
 
-gradlew test --info
-This runs Cucumber features using Cucumber's JUnit runner.
+git clone https://github.com/jcsmor/challengeS.git cd challengeS
 
-Using Gradle to run the Selenium feature file: After cloning the project and install gradle dependencies, go to project source and run:
+Install Gradle and Gradle dependencies
+```
 
-gradle selenium
+## Running the tests
 
-Using Gradle to run the Api feature file: After cloning the project and install gradle dependencies, go to project source and run:
+To run the Selenium tests open a command window and run:
 
-gradle apiTests
+./gradlew selenium  or  gradle selenium
+
+To run the Api tests open a command window and run:
+
+./gradlew apiTest or gradle apiTest
+
+### And coding style tests
+
+Selenim tests use Cucumber and Java and the lattest version of chromedriver
+
+Api tests use cucumber and Java with rest assured libraries and Hamcrest Matchers
+
+## Built With
+
+* [IntelliJ IDEA](https://www.jetbrains.com/idea/) - The IDE used
+* [GRADLE](https://gradle.org/) - Dependency Management
+* [Selenium](https://www.seleniumhq.org/) - Core Driver
+* [Junit](https://junit.org/) - Core Runner
+* [Selenium](https://cucumber.io/) - Keyword-Driven Engine
+* [REST Assured](http://rest-assured.io/) - Testing and validating REST services in Java
+
+## Authors
+
+* **Joao Moreira** - *Initial work* - [PurpleBooth](https://github.com/jcsmor)
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+
+

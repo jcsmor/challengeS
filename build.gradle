@@ -62,7 +62,7 @@ task selenium() {
     }
 }
 
-task apiTEst() {
+task apiTest() {
     dependsOn assemble, compileTestJava
     doLast {
         javaexec {
