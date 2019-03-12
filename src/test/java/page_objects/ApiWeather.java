@@ -23,7 +23,7 @@ public class ApiWeather {
     }
 
     public static void getStatusResponseCode(Integer statusCode) {
-        response.then().statusCode(statusCode).log().everything();
+        response.then().statusCode(statusCode);
     }
 
     public static void getContentType() {

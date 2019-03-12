@@ -1,6 +1,6 @@
 Feature: Get Current weather data
 
-  Scenario Outline: User calls current weather data using city name
+  Scenario Outline: User calls current weather data using city name <name>
     When Call current weather data for one location by city name <name>
     Then the status response code is 200
     And the response content type is JSON
@@ -14,7 +14,7 @@ Feature: Get Current weather data
       | Lisbon     |
       | Cairns     |
 
-  Scenario Outline: User calls current weather data using city ID
+  Scenario Outline: User calls current weather data using city ID <id>
     When Call current weather data for one location by city id <id>
     Then the status response code is 200
     And the response content type is JSON
