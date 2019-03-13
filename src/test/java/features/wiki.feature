@@ -1,6 +1,6 @@
 Feature: wiki fruit definition
   @Selenium
-  Scenario Outline: I want to look up the definition of words
+  Scenario Outline: I want to look up the definition of words <word>
 
     Given the user navigates to the wikipage
     When the user look up the definition of the word <word>
