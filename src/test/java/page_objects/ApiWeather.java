@@ -44,14 +44,19 @@ public class ApiWeather {
     }
 
     public static void getTemperature(){
-        Float result = response.path("main.temp");
-        assertThat(result, instanceOf(Float.TYPE));
+        String result = response.path("main.temp").toString();
+        Double dResult = Double.valueOf(result);
+        assertThat(dResult, instanceOf(Double.TYPE));
     }
 
     public static void compareMinMaxTemp(){
         Float tempMin = response.path("main.temp_min");
         Float tempMax = response.path("main.temp_max");
         assertThat(tempMax, is(greaterThanOrEqualTo(tempMin)));
+    }
+
+    public static boolean isNumeric(String str) {
+        return str.matches("-?\\d+(\\.\\d+)?");  //match a number with optional '-' and decimal.
     }
 
 }
